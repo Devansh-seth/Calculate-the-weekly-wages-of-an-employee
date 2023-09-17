@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    double hwage, hours_worked, weekly_wages;
+    // Input hourly wage and hours worked
+    printf("Enter hourly wage: ");
+    scanf("%lf", &hwage);
+    printf("Enter hours worked this week: ");
+    scanf("%lf", &hours_worked);
+    // Calculate weekly wages
+    if (hours_worked <= 30) {
+        weekly_wages = hwage * hours_worked;
+    } else {
+        double base_pay = 30 * hwage;
+        double extra_hours = hours_worked - 30;
+        double extra_pay = 2 * hwage * extra_hours;
+        weekly_wages = base_pay + extra_pay;
+    }
+    // Display the result
+    printf("Weekly wages: $%.2lf\n", weekly_wages);
+
+    return 0;
+}
+
